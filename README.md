@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Матч-трекер
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Простое веб-приложение для отслеживания матчей. Приложение загружает список матчей с API, отображает названия команд, счет, статус матча и позволяет обновлять данные по нажатию кнопки "Обновить".
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Функциональность
 
-### `npm start`
+- Загружает список матчей с API.
+- Отображает названия команд, счет и статус матча.
+- Позволяет обновлять данные по нажатию кнопки "Обновить".
+- Показывает индикатор загрузки при запросе данных.
+- Отображает сообщение об ошибке, если API недоступно.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## API
 
-### `npm test`
+### Запросы
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Base URL:** `https://app.ftoyd.com/fronttemp-service`
+- **Swagger документация:** [Ссылка](https://drive.google.com/file/d/1p4Y9-8KL0eCQXh2HZoGgFRK05z_Vz62U/view?usp=sharing)
 
-### `npm run build`
+### Обработка ошибок
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Если сервер недоступен, отображается сообщение:  
+**"Ошибка: не удалось загрузить информацию"**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Технологии
 
-### `npm run eject`
+- **Next.js** (опционально):
+  - Можно использовать `getServerSideProps` или `getStaticProps`.
+  - Разрешено использовать SWR или React Query для работы с API.
+  - **Не использовать** API Routes (`pages/api`), так как серверная часть уже реализована.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Макет Figma:  
+[Ссылка на макет](https://www.figma.com/design/W16WfB86EgqtcuuqLCYjgF/Test-assignment?node-id=113-741&t=hBEv4NU9JHRNcUKm-4)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Как запустить проект
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Установите зависимости:
+   npm install
+   
+2. Запустите проект:
+   npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Откройте http://localhost:3000 в браузере.
+
+### **Лицензия**
+
+Проект лицензирован под MIT. Подробнее см. [LICENSE](LICENSE).
