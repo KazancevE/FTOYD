@@ -39,8 +39,8 @@ export const Status = styled.div<StatusProps>`
   padding: 2px 6px;
   background-color: ${props => {
     switch (props.status) {
-      case '#EB0237':
-        return 'green';
+      case 'Finished':
+        return '#EB0237';
       case 'Ongoing':
         return '#43AD28';
       case 'Pending':

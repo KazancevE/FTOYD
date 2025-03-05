@@ -36,10 +36,10 @@ const App: React.FC = () => {
       if (response.data.ok) {
         setMatches(response.data.data.matches);
       } else {
-        setError('Ошибка при загрузке данных');
+        setError('Ошибка: не удалось загрузить информацию');
       }
     } catch (error) {
-      setError('Ошибка при загрузке данных');
+      setError('Ошибка: не удалось загрузить информацию');
     } finally {
       setLoading(false);
     }
@@ -52,8 +52,7 @@ const App: React.FC = () => {
   return (
     <AppContainer>
       <GlobalStyles />
-      <Header onRefresh={fetchMatches}/>
-      {error && <ErrorBanner message={error} onRefresh={fetchMatches} />}
+      <Header onRefresh={fetchMatches} error={error}/>
       {loading ? (
         <p>Загрузка...</p>
       ) : (

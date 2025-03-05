@@ -1,5 +1,8 @@
 import React from 'react';
-import { ErrorBannerContainer, RefreshButton } from './ErrorBanner.styles';
+import { BannerBody, ErrorBannerContainer, RefreshButton } from './ErrorBanner.styles';
+import logo from '../../assets/image/Refresh.png'
+import { Logo } from '../Header/Header.styles';
+import attention from '../../assets/image/alert-triangle.png'
 
 interface ErrorBannerProps {
   message: string;
@@ -9,8 +12,11 @@ interface ErrorBannerProps {
 const ErrorBanner: React.FC<ErrorBannerProps> = ({ message, onRefresh }) => {
   return (
     <ErrorBannerContainer>
-      <p>{message}</p>
-      <RefreshButton onClick={onRefresh}>Обновить</RefreshButton>
+      <BannerBody>
+        <Logo src={attention} alt="Refresh" />
+        <p>{message}</p>
+      </BannerBody>
+      <RefreshButton onClick={onRefresh}>Обновить<Logo src={logo}/></RefreshButton>
     </ErrorBannerContainer>
   );
 };
